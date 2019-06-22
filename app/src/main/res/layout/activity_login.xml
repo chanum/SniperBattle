@@ -23,7 +23,7 @@
 
         <!-- User Label -->
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/user_et"
+            android:id="@+id/edittext_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -35,7 +35,7 @@
 
         <!-- Password Label -->
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password_et"
+            android:id="@+id/edittext_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -80,7 +80,7 @@
             android:textColor="@color/colorPrimaryLight"/>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_newUser"
+            android:id="@+id/button_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
