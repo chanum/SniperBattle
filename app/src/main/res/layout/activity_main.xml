@@ -1,18 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+        <include
+            layout="@layout/toolbar"
+            android:id="@+id/toolbar_layout"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+        </include>
+
+        <Button
+            android:id="@+id/shoot_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SHOOT" />
+
+        <Button
+            android:id="@+id/processed_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PROC" />
+
+        <Button
+            android:id="@+id/gps_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GPS" />
+
+        <Button
+            android:id="@+id/join_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="JOIN" />
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

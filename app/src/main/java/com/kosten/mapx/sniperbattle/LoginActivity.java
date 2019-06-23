@@ -39,6 +39,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         // button listener
         mLogInButton.setOnClickListener(this);
         mNewUserButton.setOnClickListener(this);
+
+        mNameEditTxt.setText("test@test.com");
+        mPassEditTxt.setText("123456");
     }
 
     /***********************************************************************************************
