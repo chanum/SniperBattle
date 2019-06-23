@@ -13,4 +13,6 @@
     <color name="colorPrimaryText">#fafafa</color>
     <color name="colorPrimaryTextLight">#ffffff</color>
     <color name="colorPrimaryTextDark">#62727b</color>
+
+    <color name="semi_transparent">#66000000</color>
 </resources>
