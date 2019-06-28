@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "713312275054",
+    "firebase_url": "https://sniperbattle-v01.firebaseio.com",
+    "project_id": "sniperbattle-v01",
+    "storage_bucket": "sniperbattle-v01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:713312275054:android:2b2dbb2880597a5a",
+        "android_client_info": {
+          "package_name": "com.kosten.mapx.sniperbattle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "713312275054-1lve7safigah7sskm6hvt18klk6v166r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kosten.mapx.sniperbattle",
+            "certificate_hash": "9574678b89337b49bad0df7a103df6e35556cbd5"
+          }
+        },
+        {
+          "client_id": "713312275054-ahha5c6lilfg08deh129il7p9avf0d5j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_tvFM4PqdskUug05Jo0k1bIU7T9sG4LI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "713312275054-ahha5c6lilfg08deh129il7p9avf0d5j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
