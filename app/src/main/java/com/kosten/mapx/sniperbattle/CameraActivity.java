@@ -98,9 +98,9 @@ public abstract class CameraActivity extends AppCompatActivity
     getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
     setContentView(R.layout.activity_camera);
-    Toolbar toolbar = findViewById(R.id.toolbar);
-    setSupportActionBar(toolbar);
-    getSupportActionBar().setDisplayShowTitleEnabled(false);
+    //Toolbar toolbar = findViewById(R.id.toolbar);
+    //setSupportActionBar(toolbar);
+    //getSupportActionBar().setDisplayShowTitleEnabled(false);
 
     if (hasPermission()) {
       setFragment();
@@ -114,9 +114,10 @@ public abstract class CameraActivity extends AppCompatActivity
     apiSwitchCompat = findViewById(R.id.api_info_switch);
     bottomSheetLayout = findViewById(R.id.bottom_sheet_layout);
     gestureLayout = findViewById(R.id.gesture_layout);
-    sheetBehavior = BottomSheetBehavior.from(bottomSheetLayout);
+    //sheetBehavior = BottomSheetBehavior.from(bottomSheetLayout);
     bottomSheetArrowImageView = findViewById(R.id.bottom_sheet_arrow);
 
+    /*
     ViewTreeObserver vto = gestureLayout.getViewTreeObserver();
     vto.addOnGlobalLayoutListener(
         new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -163,15 +164,16 @@ public abstract class CameraActivity extends AppCompatActivity
           @Override
           public void onSlide(@NonNull View bottomSheet, float slideOffset) {}
         });
+    */
 
-    frameValueTextView = findViewById(R.id.frame_info);
-    cropValueTextView = findViewById(R.id.crop_info);
-    inferenceTimeTextView = findViewById(R.id.inference_info);
+    //frameValueTextView = findViewById(R.id.frame_info);
+    //cropValueTextView = findViewById(R.id.crop_info);
+    //inferenceTimeTextView = findViewById(R.id.inference_info);
 
-    apiSwitchCompat.setOnCheckedChangeListener(this);
+    //apiSwitchCompat.setOnCheckedChangeListener(this);
 
-    plusImageView.setOnClickListener(this);
-    minusImageView.setOnClickListener(this);
+    //plusImageView.setOnClickListener(this);
+    //minusImageView.setOnClickListener(this);
   }
 
   protected int[] getRgbBytes() {

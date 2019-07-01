@@ -216,7 +216,7 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
             trackingOverlay.postInvalidate();
 
             computingDetection = false;
-
+            /*
             runOnUiThread(
                 new Runnable() {
                   @Override
@@ -225,7 +225,7 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                     showCropInfo(cropCopyBitmap.getWidth() + "x" + cropCopyBitmap.getHeight());
                     showInference(lastProcessingTimeMs + "ms");
                   }
-                });
+                });*/
           }
         });
   }
