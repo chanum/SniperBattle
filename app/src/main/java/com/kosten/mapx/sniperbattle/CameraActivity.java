@@ -90,7 +90,7 @@ public abstract class CameraActivity extends AppCompatActivity
   private LinearLayout shootLayout;
   private MediaPlayer mpShoot;
 
-  protected TextView frameValueTextView, cropValueTextView, inferenceTimeTextView;
+  //protected TextView frameValueTextView, cropValueTextView, inferenceTimeTextView;
   protected ImageView bottomSheetArrowImageView;
   private ImageView plusImageView, minusImageView;
   private SwitchCompat apiSwitchCompat;
@@ -544,7 +544,7 @@ public abstract class CameraActivity extends AppCompatActivity
       setNumThreads(numThreads);
     }
   }
-  */
+
 
   protected void showFrameInfo(String frameInfo) {
     frameValueTextView.setText(frameInfo);
@@ -557,7 +557,7 @@ public abstract class CameraActivity extends AppCompatActivity
   protected void showInference(String inferenceTime) {
     inferenceTimeTextView.setText(inferenceTime);
   }
-
+*/
   protected abstract void processImage();
 
   protected abstract void onPreviewSizeChosen(final Size size, final int rotation);

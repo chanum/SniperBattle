@@ -70,10 +70,6 @@ public class MultiBoxTracker {
   private int frameHeight;
   private int sensorOrientation;
 
-  // Filtros
-  private String labelFilter = "person";
-  private double confidenceFilter = 0.65;
-
   public MultiBoxTracker(final Context context) {
     for (final int color : COLORS) {
       availableColors.add(color);
@@ -168,27 +164,26 @@ public class MultiBoxTracker {
 
     for (final Recognition result : results) {
 
-      if(result.getTitle().equals(labelFilter) && result.getConfidence() > confidenceFilter) {
-        if (result.getLocation() == null) {
-          continue;
-        }
-        final RectF detectionFrameRect = new RectF(result.getLocation());
-
-        final RectF detectionScreenRect = new RectF();
-        rgbFrameToScreen.mapRect(detectionScreenRect, detectionFrameRect);
-
-        logger.v(
-                "Result! Frame: " + result.getLocation() + " mapped to screen:" + detectionScreenRect);
-
-        screenRects.add(new Pair<Float, RectF>(result.getConfidence(), detectionScreenRect));
-
-        if (detectionFrameRect.width() < MIN_SIZE || detectionFrameRect.height() < MIN_SIZE) {
-          logger.w("Degenerate rectangle! " + detectionFrameRect);
-          continue;
-        }
-
-        rectsToTrack.add(new Pair<Float, Recognition>(result.getConfidence(), result));
+      if (result.getLocation() == null) {
+        continue;
       }
+      final RectF detectionFrameRect = new RectF(result.getLocation());
+
+      final RectF detectionScreenRect = new RectF();
+      rgbFrameToScreen.mapRect(detectionScreenRect, detectionFrameRect);
+
+      logger.v(
+              "Result! Frame: " + result.getLocation() + " mapped to screen:" + detectionScreenRect);
+
+      screenRects.add(new Pair<Float, RectF>(result.getConfidence(), detectionScreenRect));
+
+      if (detectionFrameRect.width() < MIN_SIZE || detectionFrameRect.height() < MIN_SIZE) {
+        logger.w("Degenerate rectangle! " + detectionFrameRect);
+        continue;
+      }
+
+      rectsToTrack.add(new Pair<Float, Recognition>(result.getConfidence(), result));
+
     }
 
 
