@@ -19,6 +19,7 @@ package com.kosten.mapx.sniperbattle;
 import android.Manifest;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.hardware.camera2.CameraAccessException;
@@ -29,6 +30,7 @@ import android.media.Image;
 import android.media.Image.Plane;
 import android.media.ImageReader;
 import android.media.ImageReader.OnImageAvailableListener;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -85,6 +87,9 @@ public abstract class CameraActivity extends AppCompatActivity
   private LinearLayout gestureLayout;
   private BottomSheetBehavior sheetBehavior;
 
+  private LinearLayout shootLayout;
+  private MediaPlayer mpShoot;
+
   protected TextView frameValueTextView, cropValueTextView, inferenceTimeTextView;
   protected ImageView bottomSheetArrowImageView;
   private ImageView plusImageView, minusImageView;
@@ -117,6 +122,7 @@ public abstract class CameraActivity extends AppCompatActivity
     //sheetBehavior = BottomSheetBehavior.from(bottomSheetLayout);
     bottomSheetArrowImageView = findViewById(R.id.bottom_sheet_arrow);
 
+    shootLayout = findViewById(R.id.layout_shoot);
     /*
     ViewTreeObserver vto = gestureLayout.getViewTreeObserver();
     vto.addOnGlobalLayoutListener(
@@ -174,6 +180,22 @@ public abstract class CameraActivity extends AppCompatActivity
 
     //plusImageView.setOnClickListener(this);
     //minusImageView.setOnClickListener(this);
+
+    mpShoot = MediaPlayer.create(this, R.raw.shootgun);
+    shootLayout.setOnClickListener(this);
+  }
+
+  /***********************************************************************************************
+   * onClick listner for cancel and save buttons
+   * ********************************************************************************************/
+  @Override
+  public void onClick(View v) {
+    switch (v.getId()) {
+      case R.id.layout_shoot:
+        //Toast.makeText(this, "Shoot !", Toast.LENGTH_SHORT).show();
+        mpShoot.start();
+        break;
+    }
   }
 
   protected int[] getRgbBytes() {
@@ -501,7 +523,7 @@ public abstract class CameraActivity extends AppCompatActivity
     if (isChecked) apiSwitchCompat.setText("NNAPI");
     else apiSwitchCompat.setText("TFLITE");
   }
-
+/*
   @Override
   public void onClick(View v) {
     if (v.getId() == R.id.plus) {
@@ -522,6 +544,7 @@ public abstract class CameraActivity extends AppCompatActivity
       setNumThreads(numThreads);
     }
   }
+  */
 
   protected void showFrameInfo(String frameInfo) {
     frameValueTextView.setText(frameInfo);

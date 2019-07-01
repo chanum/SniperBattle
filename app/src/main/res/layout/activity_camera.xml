@@ -38,4 +38,26 @@
     </RelativeLayout>
 
 
+    <LinearLayout
+        android:id="@+id/layout_shoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_marginTop="4sp"
+        android:background="#00000000">
+
+
+
+        <ImageView
+            android:id="@+id/imageView_sight"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/mira"
+
+            />
+
+    </LinearLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
