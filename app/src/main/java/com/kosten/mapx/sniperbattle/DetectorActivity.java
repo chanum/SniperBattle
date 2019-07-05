@@ -213,6 +213,8 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
 
                 result.setLocation(location);
                 mappedRecognitions.add(result);
+
+                checkShoot(location);
               }
             }
 
@@ -233,6 +235,22 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
           }
         });
   }
+
+  private void checkShoot(RectF location) {
+    float height = 480;
+    float width = 640;
+    float centerHeight = height/2;
+    float centerWidth = width/2;
+    boolean result;
+
+    result = location.intersect(centerWidth,centerHeight,centerWidth,centerHeight);
+
+    if (result) {
+      Toast.makeText(this, "DEAD", Toast.LENGTH_SHORT).show();
+    }
+
+  }
+
 
   @Override
   protected int getLayoutId() {
