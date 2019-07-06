@@ -236,14 +236,26 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
         });
   }
 
+  // RectF location  = [left, top, right, bottom]
+  // RectF location  = [left, bottom, right, top] OK
   private void checkShoot(RectF location) {
-    float height = 480;
-    float width = 640;
+    float height = previewHeight;
+    float width = previewWidth;
     float centerHeight = height/2;
     float centerWidth = width/2;
     boolean result;
 
-    result = location.intersect(centerWidth,centerHeight,centerWidth,centerHeight);
+    float rectOfsset = 30;
+
+    float targetLeft = location.centerX() - rectOfsset;
+    float targetRight = location.centerX() + rectOfsset;
+
+    float targetTop = location.centerY() + rectOfsset;
+    float targetBottom = location.centerY() - rectOfsset;
+
+    RectF targetRec = new RectF(targetLeft, targetBottom, targetRight, targetTop);
+
+    result = targetRec.contains(centerWidth, centerHeight);
 
     if (result) {
       Toast.makeText(this, "DEAD", Toast.LENGTH_SHORT).show();
