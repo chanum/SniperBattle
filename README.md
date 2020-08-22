@@ -9,4 +9,4 @@ Demo project that implements Firebase and TensorFlow to detect persons with the 
 
 # Evidence
 
-![Demo Capture](SniperBattle/documentation/snipperbattle.gif
+![Demo Capture](documentation/snipperbattle.gif)
